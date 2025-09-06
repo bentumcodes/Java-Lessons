@@ -12,7 +12,7 @@ public class GuessNumberGame {
         System.out.println("\nWELCOME TO THE GUESS GAME. GUESS ANY NUMBER B/N 0 -10 TO WIN");
         
         //using while loop to control the number of guesses
-        int userNo = -1; //this shift the index to include zero in the random generated numbers
+        int userNo = -1; //this shift the index to include zero in the random ge
         while (userNo != rand){
         System.out.println("Enter your guess no: ");
         userNo = input.nextInt();

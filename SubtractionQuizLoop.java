@@ -1,10 +1,16 @@
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 public class SubtractionQuizLoop {
     public static void main(String[] args){
 
-        //This subtraction game has 5 questions to ask the user
+         //This subtraction game has 5 questions to ask the user
         //and it will record the number of correct and wrong answers and display to the user
-
+        String intro = "This subtraction game has 5 questions.\n"+
+                        "and it will display the results afterwards.\n"+
+                        "Are you ready to play? click 'OK' to start";
+                    
+            //using the GUI to display the intro message
+        JOptionPane.showMessageDialog(null,intro,"SUBTRATION QUIZ",JOptionPane.PLAIN_MESSAGE);
         //set the constant for the number of question
         final int NUMOFQUESTION = 5;
         int correctCount = 0; //to count the number of correct answers
@@ -55,8 +61,10 @@ public class SubtractionQuizLoop {
         long timeUsed = endTime - startTime;
 
         //display final score sheet
-
-        System.out.printf("\nCorrect count is:  %2d and Wrong count is %2d \t",correctCount,wrongCount);//this keeps it in a line
+        //trying out GUi here
+        String outputText ="\nCorrect count is:  "+correctCount+ " and Wrong Count is: "+wrongCount;
+        JOptionPane.showMessageDialog(null,outputText,"SUBTRACTION QUIZ",JOptionPane.INFORMATION_MESSAGE);
+        //System.out.printf("\nCorrect count is:  %2d and Wrong count is %2d \t",correctCount,wrongCount);//this keeps it in a line
         
         System.out.println("\nTime used for the quiz is "+ (timeUsed /1000)+"seconds " + responds);
 
