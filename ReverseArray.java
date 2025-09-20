@@ -14,8 +14,8 @@ for (int k : A){
 }System.out.println("");
 //traversing through A whiles reverse copying into B
 
-for (int i = A.length-1, j=0; i >= 0;i--,j++){
-    B[j] = A[i];
+for (int i = A.length-1, j=0; i >= 0;i--,j++){//reverse traverse, as A[] counts down, B[]goes up
+    B[j] = A[i];  //the last elements of A[] fills the begining elements of B[]
 
 
 }//printing the Array B
