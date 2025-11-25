@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class BookStore {
     private String title;
@@ -137,6 +138,7 @@ input.close();
     */
 
 //incase you want to use getters and setters instead of the Constructors
+/* 
 Scanner input = new Scanner (System.in);
 System.out.println("Enter the number of books: ");
 int noBooks = input.nextInt();
@@ -180,6 +182,58 @@ for (int i =0;i <noBooks;i++){
     System.out.println("====Book NO: "+ (i+1)+"=====");
     mybook[i].displayBooks();
 
+    System.out.println(" ");
+}
+*/
+
+//3rd Method. Using ARRAYLIST  to get the same results
+//import the Arraylist Class from UTIL
+
+Scanner input = new Scanner(System.in);
+
+//user enters the number of books into the BookStore
+System.out.println("How many books do you want to enter into the BookStore?: ");
+int bookCount = input.nextInt();
+input.nextLine(); //to clear the scanner buffer
+//counter for the iteration
+int i = 0;
+
+//create the arraylist to hold the number of books
+ArrayList<BookStore> myBooks = new ArrayList<>();
+
+while (i < bookCount){
+    System.out.println("========Book No: "+(i+1)+"==========");
+
+    //create an empty object to hold the books that would fill the ArrayList created
+   BookStore bookList = new BookStore();
+    System.out.println("Enter Book Title: ");
+    String bkTitle = input.nextLine();
+    bookList.setTitle(bkTitle);
+
+    System.out.println("Enter Author name: ");
+    String bkAuthor = input.nextLine();
+    bookList.setAuthor(bkAuthor);
+
+    System.out.println("Book Unit Price: ");
+    double bkPrice = input.nextDouble();
+    bookList.setBookPrice(bkPrice);
+
+    System.out.println("Enter No. of Books: ");
+    int bkQty = input.nextInt();
+    bookList.setBkQty(bkQty);
+
+    input.nextLine();
+    //load Arraylist with book object
+    myBooks.add(i, bookList);
+System.out.println(" ");
+    i++; //counter for the book No. eg. Book 1, Book 2
+}  i++; // counter for each book
+
+//printing the outcome
+System.out.println("==========COMPLETE BOOK INVENTORY==========");
+for (int j = 0;j < myBooks.size();j++){
+    System.out.println("========Book "+(j+1)+"==========");
+    myBooks.get(j).displayBooks(); //get() is used to retrive data from the ArrayList
     System.out.println(" ");
 }
 
